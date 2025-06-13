@@ -1,0 +1,118 @@
+<html>
+ <head>
+  <title>
+   Prime Minister's Special Scholarship Scheme
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-image: url('https://placehold.co/1920x1080?text=Background+Image+of+Red+Fort+with+Indian+Flag');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        .header img {
+            height: 50px;
+        }
+        .header .login {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .content {
+            text-align: center;
+            margin-top: 150px;
+        }
+        .content h1 {
+            font-size: 50px;
+            color: orange;
+            margin: 0;
+        }
+        .content h2 {
+            font-size: 40px;
+            margin: 10px 0;
+        }
+        .content p {
+            font-size: 20px;
+        }
+        .content a {
+            color: lightgreen;
+            text-decoration: none;
+        }
+        .signup-button {
+            background-color: green;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        body {
+  background-image: url('https://static.toiimg.com/photo/65666850.cms');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+  </style>
+ </head>
+ <body>
+  <div class="header">
+   <img alt="Government of India Logo" height="180" src="https://upload.wikimedia.org/wikipedia/commons/8/84/Government_of_India_logo.svg" width="150"/>
+   <a class="login" href="#">
+    Login
+   </a>
+  </div>
+  <div class="content">
+   <h1>
+    WELCOME TO
+   </h1>
+   <h2>
+    The Prime Minister’s Special Scholarship Scheme
+   </h2>
+   <p>
+    To Create an new account?
+    <a href="#">
+     Click here
+    </a>
+   </p>
+   <button class="signup-button">
+    Sign Up
+   </button>
+  </div>
+  <script>
+    // Handle the Login button click
+    document.querySelector('.login').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link behavior
+        alert('Confirm To "Login"');
+    });
+
+    // Handle the Sign Up button click
+    document.querySelector('.signup-button').addEventListener('click', function() {
+        alert('Confirm To "Sign Up"');
+    });
+
+    // Handle the "Click here" link click
+    document.querySelector('.content a').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link behavior
+        alert('You clicked on the "Click here" to create a new account!');
+    });
+</script>
+
+ </body>
+</html>
