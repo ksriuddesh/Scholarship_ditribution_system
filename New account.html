@@ -1,0 +1,178 @@
+<html>
+<head>
+    <title>Create New Account</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('https://www.nshm.com/wp-content/uploads/2024/06/Scholarship.webp') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .header {
+            display: flex;
+            align-items: left;
+            margin-bottom: 20px;
+        }
+        .header img {
+            height: 80px;
+            margin-right: 10px;
+        }
+        .header div {
+            text-align: left;
+        }
+        .header div h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .header div p {
+            margin: 0;
+            font-size: 14px;
+        }
+        .form-container {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #fff;
+        }
+        .form-container p {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        .form-container p a {
+            color: #00f;
+            text-decoration: none;
+        }
+        .form-container p a:hover {
+            text-decoration: underline;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+            color: #00bfff;
+            font-size: 12px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background: green;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background: #333;
+        }
+        .form-container .input-group {
+            position: relative;
+            display: grid;
+            grid-template-columns: 30px 1fr;
+            align-items: center;
+        }
+        .form-container .input-group i {
+            color: #ccc;
+            text-align: center;
+        }
+        .form-container .input-group input {
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <img alt="Government of India Logo" height="180" src="https://upload.wikimedia.org/wikipedia/commons/8/84/Government_of_India_logo.svg" width="180"/>
+
+    <div class="container">
+        <div class="header">
+        </div>
+        <div class="form-container">
+            <h2 style="color: white;">Create new Account</h2>
+            <p style="color: white;">
+                Already Registered?
+                <a href="#"><span style="color: greenyellow; font-weight: bold;">Login</span></a>
+            </p>
+            <form id="signupForm">
+                <label for="name">NAME</label>
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input id="name" name="name" required="" type="text"/>
+                </div>
+                <label for="email">EMAIL</label>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input id="email" name="email" required="" type="email"/>
+                </div>
+                <label for="password">PASSWORD</label>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input id="password" name="password" required="" type="password"/>
+                </div>
+                <label for="dob">DATE OF BIRTH</label>
+                <div class="input-group">
+                    <i class="fas fa-calendar-alt"></i>
+                    <input id="dob" name="dob" required="" type="date"/>
+                </div>
+                <button type="submit" style="font-weight: bold;">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Validate form fields
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const dob = document.getElementById('dob').value;
+
+            if (!name) {
+                alert('Please enter your name.');
+                return;
+            }
+
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            if (password.length < 6) {
+                alert('Password must be at least 6 characters long.');
+                return;
+            }
+
+            if (!dob) {
+                alert('Please enter your date of birth.');
+                return;
+            }
+
+            // Form is valid
+            alert('Form submitted successfully!');
+            // You can now submit the form data to the server using AJAX or any other method
+        });
+    </script>
+</body>
+</html>
