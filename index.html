@@ -1,0 +1,203 @@
+<html>
+ <head>
+  <title>
+   About & Contact Us
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            background-color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background-color: #e0e0e0;
+        }
+        .header img {
+            height: 80px;
+        }
+        .header h1 {
+            margin: 0;
+            margin-left: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: #e0e0e0;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        .nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+        }
+        .nav a.active {
+            color: #8b5e3c;
+            font-weight: bold;
+        }
+        .content {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .about, .contact {
+            width: 45%;
+        }
+        .about h2, .contact h2 {
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+        }
+        .about ul {
+            list-style: none;
+            padding: 0;
+        }
+        .about ul li {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .about ul li::before {
+            content: "•";
+            color: #8b5e3c;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact form input, .contact form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            background-color: #d3c6b3;
+        }
+        .contact form input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="header">
+    <img alt="Government of India Logo" height="180" src="https://upload.wikimedia.org/wikipedia/commons/8/84/Government_of_India_logo.svg" width="180"/>   
+  </div>
+  <div class="nav">
+   <a href="#">
+    HOME
+   </a>
+   <a href="#">
+    SCHOLAR SHIPS
+   </a>
+   <a href="#">
+    DOCUMENTATION STATUS
+   </a>
+   <a class="active" href="#">
+    ABOUT US
+   </a>
+  </div>
+  <div class="content">
+   <div class="about">
+    <h2>
+     About Us
+    </h2>
+    <ul>
+     <li>
+      Scholars Hub is a students portal for applying an
+      <b>
+       PMSS
+      </b>
+      scholarships through online verification.
+     </li>
+     <li>
+      It’s an government based platform for students those who are eligible for scholarships they can apply in a easy manner.
+     </li>
+     <li>
+      This is an platform between students and
+      <b>
+       SAG Bureau
+      </b>
+      for application of scholarships.
+     </li>
+     <li>
+      This portal can be aware of verification and documentation of student certificates in a secure scheme and direct scholar fund from particular government.
+     </li>
+     <li>
+      <b>
+       For Further Queries, Contact Us
+      </b>
+     </li>
+    </ul>
+   </div>
+   <div class="contact">
+    <h2>
+     Contact Us
+    </h2>
+    <form>
+     <input name="name" placeholder="NAME" type="text"/>
+     <input name="email" placeholder="E-MAIL" type="email"/>
+     <input name="subject" placeholder="SUBJECT" type="text"/>
+     <textarea name="message" placeholder="MESSAGE" rows="5"></textarea>
+     <input type="submit" value="SUBMIT"/>
+    </form>
+   </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    // Form validation
+    const form = document.querySelector('.contact form');
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Validate form fields
+        const name = form.elements['name'].value.trim();
+        const email = form.elements['email'].value.trim();
+        const subject = form.elements['subject'].value.trim();
+        const message = form.elements['message'].value.trim();
+
+        if (!name || !email || !subject || !message) {
+            alert('Please fill out all fields.');
+            return;
+        }
+
+        // Basic email validation
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailPattern.test(email)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+
+        // Submit form if validation passes
+        alert('Form submitted successfully!');
+        form.reset(); // Reset the form fields
+    });
+
+    // Active navigation link highlight
+    const navLinks = document.querySelectorAll('.nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            navLinks.forEach(link => link.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+});
+
+  </script>
+ </body>
+</html>
